@@ -5,28 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
 <title>Breaking Bad Game</title>
 </head>
 
 
 
 <body>
+  <div class="main-container"></div>
   <div class="main-section-title">Breaking Bad Fight Club</div>
 		<div id="main-game-section">
 					<div id="characters-section">
 				<div class="section-title">Choose Your Fighter!</div>
 			</div>
 			
-			
-			<div id="selected-character-section">
-				<div class="section-title">Your Fighter</div>
-								<div id="selected-character"></div>
+      
+      <div class="section-title">Your Fighter</div>
+      <div id="selected-character"></div>  
+      <div id="selected-character-section">
 			</div>
 
+			
+			<div id="attack-section">
+				<div class="section-title">Your Opponent To Fight</div>
+			</div>
 
-		</div>
+			<div class="section-title">Fight Section</div>
+			<div id="fight-section">
+				<button id="attack-button">Attack</button>
+			</div>
+
+			<div id="action">
+				<div class="character-section">
+					<div class="section-title">Defender</div>
+					<div id="defender"></div>
+				</div>
+			</div>
+
+    </div>
+  </div class="main-container">
 	
-
+  
 
 </body>
 </html>

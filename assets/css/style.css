@@ -1,10 +1,72 @@
-/* body {
-    background-color: red;
-    color: salmon;
-    background-attachment: fixed;
+body {
+  background-image: url("../images/background.jpg") no-repeat center center fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} 
+
+img {
+  width: 300px;
+  height: 200px;
+  border-radius: 20px;
 }
-h1 {
-    font-weight: 300;
-    font-style: oblique;
-    font color: purple;
-} */
+
+.section-title {
+  font-size: 200%;
+}
+
+.main-section-title {
+  font-size: 300%;
+  text-align: center;
+}
+
+.character {
+  display: inline-block;
+  background-color: white;
+  border-color: blue;
+  border-style: solid;
+  border-width: 5px;
+}
+
+.character-image {
+  padding-right: 16px;
+  padding-left: 16px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.character-name {
+  text-align: middle;
+}
+
+.character-health {
+  text-align: middle;
+}
+
+.target-enemy {
+  color: white;
+  background-color: black;
+}
+
+#selected-character {
+  width: 190px;
+  height: 160px;
+}
+
+#attacker {
+  width: 190px;
+  height: 160px;
+}
+
+#defender {
+  width: 190px;
+  height: 160px;
+}
+
+#defender-name {
+  text-align: center;
+}
+
+#defender-health {
+  text-align: center;
+}
