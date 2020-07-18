@@ -49,7 +49,46 @@ $(document).ready(function (){
         }
       };
 
+      initializeGame();
 
+    var updateCharacter = function(charObj, areaRender) {
+        $(areaRender).empty();
+        renderCharacter(charObj, areaRender);        
+        };
 
+    var renderEnemies = function(enemyArr) {
+        for (var i = 0; i < enemyArr.length; i++) {
+         renderCharacter(enemyArr[i], "#available-to-attack-section");
+            }
+        };
+    var restartGame = function(resultMessage) {
+            var restart = $("<button>Restart</button>").click(function() {
+            location.reload();
+            });
+        
+    var gameState = $("<div>").text(resultMessage);
+             $("body").append(gameState);
+             $("body").append(restart);
+          };
+
+    $("#characters-selection").on("click", ".character", function() {
+
+        var name = $(this).attr("data-name")
+
+        if (!attacker) {
+            attacker = characters[name];
+        for (var key in characters) {
+            if (key !== name) {
+                fighters.push(characters[key]);
+            }
+        }
+        $("#characters-section").hide();
+        
+        updateCharacter(attacker, "#selected-character");
+        renderEnemies(fighters);
+        }
+    });
+
+    
 
     })
