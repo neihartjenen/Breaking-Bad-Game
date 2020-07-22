@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="assets/javascript/game.js"></script>
-<title>Breaking Bad Game</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+<title>Breaking Bad Fight</title>
+
 </head>
 
 
-
 <body>
-  <div class="main-container"></div>
-  <div class="main-section-title">Breaking Bad Fight Club</div>
+	<div class="main-section-title">Breaking Bad Fight Club</div>
 		<div id="main-game-section">
-					<div id="characters-section">
-				<div class="section-title">Choose Your Fighter!</div>
+			<div id="characters-section">
+				<div class="section-title">Choose Your Fighter</div>
 			</div>
 			
-      
-      <div class="section-title">Your Fighter</div>
-      <div id="selected-character"></div>  
-      <div id="selected-character-section">
+			<!-- Section for selected fighters -->
+			<div id="selected-character-section">
+				<div class="section-title">Your Fighter</div>
+				<!--Selected character will appear -->
+				<div id="selected-character"></div>
 			</div>
 
 			
 			<div id="attack-section">
-				<div class="section-title">Your Opponent To Fight</div>
+				<div class="section-title">Enemies Available to Brawl</div>
 			</div>
 
-			<div class="section-title">Fight Section</div>
+			<div class="section-title">Fight!</div>
 			<div id="fight-section">
 				<button id="attack-button">Attack</button>
 			</div>
@@ -42,10 +42,10 @@
 				</div>
 			</div>
 
-    </div>
-  </div class="main-container">
-	
-  
+		</div>
+		
+		<!--Game messages -->
+		<div id="game-message"></div>
+	</body>
 
-</body>
 </html>

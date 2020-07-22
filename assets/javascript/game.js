@@ -9,7 +9,7 @@ $(document).ready(function (){
             enemyAttack: 12
         },
         "Jessie Pinkman": {
-            name: "Walter White",
+            name: "Jessie Pinkman",
             health: 175,
             attack: 9,
             imageUrl: "assets/images/Jesse.jpg",
@@ -29,18 +29,19 @@ $(document).ready(function (){
             imageUrl: "assets/images/Skyler.jpg",
             enemyAttack: 15
         }
-
     };
 
+    // player selects attacker
     var attacker;
+    // populates all charters not chosen as attacker
     var fighters = [];
+    // populates when player chooses oppoenent
     var defender;
     var turnCounter = 1;
     var killCount = 0;
 
 
     var renderCharacter = function (character, renderArea) {
-
         var charDiv = $("<div class='chracter' data-name='" + character.name + "'>");
         var charName = $("<div class='character-name'>").text(character.name);
         var charHealth = $("<div class='character-health'>").text(character.health);
@@ -54,19 +55,42 @@ $(document).ready(function (){
           renderCharacter(characters[key], "#characters-section");
         }
       };
-
-      initializeGame();
+     
+     initializeGame();
 
     var updateCharacter = function(charObj, areaRender) {
         $(areaRender).empty();
         renderCharacter(charObj, areaRender);        
-        };
+      };
 
     var renderEnemies = function(enemyArr) {
         for (var i = 0; i < enemyArr.length; i++) {
          renderCharacter(enemyArr[i], "#attack-section");
             }
         };
+       
+     //game message to make game more interactive
+    var renderMessage = function(message) {
+        var gameMessageSet = $("#game-message");
+        var newMessage = $("<div>").text(message);
+          gameMessageSet.append(newMessage);
+        };
+    var restartGame = function(resultMessage) {
+        var restart = $("<button>Restart</button>").click(function() {
+          location.reload();
+          });
+
+    var gameState = $("<div>").text(resultMessage);
+   
+     $("body").append(gameState);
+     $("body").append(restart);
+  };
+  
+  var clearMessage = function() {
+    var gameMessage = $("#game-message");
+
+    gameMessage.text("");
+  };
    
        $("#characters-selection").on("click", ".character", function() {
 
@@ -79,11 +103,12 @@ $(document).ready(function (){
                 fighters.push(characters[key]);
             }
         }
+       
         $("#characters-section").hide();
          updateCharacter(attacker, "#selected-character");
          renderEnemies(fighters);
-        }
-    });
+      }
+     });
 
         $("#attack-section").on("click", ".character", function() {
         var name = $(this).attr("data-name");
@@ -94,28 +119,42 @@ $(document).ready(function (){
     
         
         $(this).remove();
+        clearMessage();
         }
       });    
 
       $("#attack-button").on("click", function() {
           if ($("#defender").children().length !== 0) {
-          defender.health -= attacker.attack * turnCounter;
+            var attackMessage = "You hit " + defender.name + " for " + attacker.attack * turnCounter + " damage.";
+            var counterAttackMessage = defender.name + " slapped you back for " + defender.enemyAttack + " damage.";
+            clearMessage();
+         
+           defender.health -= attacker.attack * turnCounter;
     
-          
-          if (defender.health > 0) {
+         
+           if (defender.health > 0) {
             updateCharacter(defender, "#defender");
+            // combat messages
+            renderMessage(attackMessage);
+            renderMessage(counterAttackMessage);
+            // reduces opponents health by attack
             attacker.health -= defender.enemyAttack;
+          
             updateCharacter(attacker, "#selected-character");
     
 
             if (attacker.health <= 0) {
+              clearMessage();
               restartGame("You Got Wrecked. Try Again?");
               $("#attack-button").off("click");
             }
-        }
+          }
           else {
+           
             $("#defender").empty();
-                killCount++;
+            var gameStateMessage = "You have beaten " + defender.name + ", you can choose who to beat up next.";
+              renderMessage(gameStateMessage);
+              killCount++;
     
             
             if (killCount >= fighters.length) {
@@ -126,8 +165,10 @@ $(document).ready(function (){
         }
           turnCounter++;
         }
-        
-            
-
+        else {
+          // If there is no defender, render an error message
+          clearMessage();
+          renderMessage("No enemy here.");
+        }  
     });
-    });
+});
