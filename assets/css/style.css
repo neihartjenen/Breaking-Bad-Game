@@ -1,73 +1,86 @@
 html
 body {
-  background-image: url("/assets/images/background.jpg") no-repeat center center fixed;
-  background-repeat: no-repeat;
+  background-image: url("../images/background.jpg");
+  background-attachment: fixed;
   background-position: center;
-  background-size: cover;
-} 
+}
+
+.wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden
+  left: 50%;
+}
 
 img {
   width: 300px;
   height: 200px;
-  border-radius: 20px;
 }
 
 .section-title {
-  font-size: 45px;
+  font-size: 200%;
+  color: limegreen;
+  text-align: middle;
 }
 
 .main-section-title {
   font-size: 300%;
   text-align: center;
+  color: limegreen;
 }
 
 .character {
   display: inline-block;
-  background-color: white;
-  border-color: blue;
-  border-style: solid;
-  border-width: 5px;
+  background-color: black;
+  color: yellowgreen;
 }
 
 .character-image {
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 17px;
+  padding-left: 17px;
   margin-top: 3px;
   margin-bottom: 3px;
 }
 
-.character-name {
-  text-align: middle;
+#attack-section .character {
+  display: inline-block;
+  background-color: black;
+  color: yellowgreen;
 }
 
-.character-health {
-  text-align: middle;
+.enemy {
+  display: inline-block;
+  background-color: black;
 }
 
+#action .character {
+  color: yellowgreen;
+  background-color: black;
+}
 .target-enemy {
-  color: white;
+  color: yellowgreen;
   background-color: black;
 }
 
 #selected-character {
-  width: 190px;
-  height: 160px;
+  width: 160px;
+  height: 100px;
 }
 
 #attacker {
-  width: 190px;
-  height: 160px;
+  width: 160px;
+  height: 100px;
 }
 
 #defender {
-  width: 190px;
-  height: 160px;
+  width: 160px;
+  height: 100px;
 }
 
-#defender-name {
-  text-align: center;
+#game-message {
+  color: limegreen;
 }
 
-#defender-health {
-  text-align: center;
+#restart {
+  color: limegreen;
 }

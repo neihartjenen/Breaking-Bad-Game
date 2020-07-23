@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-<script type="text/javascript" src="assets/javascript/game.js"></script>
-<title>Breaking Bad Fight</title>
+	<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<title>Breaking Bad Fight</title>
 
 </head>
 
 
 <body>
+ <div class="wrap">
 	<div class="main-section-title">Breaking Bad Fight Club</div>
-		<div id="main-game-section">
-			<div id="characters-section">
-				<div class="section-title">Choose Your Fighter</div>
-			</div>
-			
-			<!-- Section for selected fighters -->
-			<div id="selected-character-section">
-				<div class="section-title">Your Fighter</div>
-				<!--Selected character will appear -->
-				<div id="selected-character"></div>
-			</div>
-
-			
-			<div id="attack-section">
-				<div class="section-title">Enemies Available to Brawl</div>
-			</div>
-
-			<div class="section-title">Fight!</div>
-			<div id="fight-section">
-				<button id="attack-button">Attack</button>
-			</div>
-
-			<div id="action">
-				<div class="character-section">
-					<div class="section-title">Defender</div>
-					<div id="defender"></div>
-				</div>
-			</div>
-
+	<div id="main-game-section">
+		<div id="characters-section">
+			<div class="section-title">Choose Your Character</div>
 		</div>
 		
-		<!--Game messages -->
-		<div id="game-message"></div>
-	</body>
+		<div id="selected-character-section">
+			<div class="section-title">Your Fighter</div>
+			<div id="selected-character"></div>
+		</div>
+
+		<div id="attack-section">
+			<div class="section-title">Waiting to Fight</div>
+		</div>
+
+		<div class="section-title">Fight!</div>
+		<div id="fight-section">
+			<button id="attack-button">Attack</button>
+		</div>
+
+		<div id="action">
+			<div class="character-section">
+				<div class="section-title">Defender</div>
+				<div id="defender"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+	<div id="game-message"></div>
+
+
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
 
 </html>
